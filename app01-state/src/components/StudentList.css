@@ -1,0 +1,10 @@
+main{
+    background-color:gray;
+    padding: 20px;
+}
+
+.summary{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
