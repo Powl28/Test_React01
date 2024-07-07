@@ -8,11 +8,12 @@ function StudentList({data,deleteData}) {
 
 
   const table = () => (
-    <table class="table  table-striped">
+    <table className="table  table-striped">
       <thead>
         <tr>
           <th scope="col">ID</th>
           <th scope="col">NAME</th>
+          <th scope="col">GENDER</th>
           <th scope="col">ACTION</th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@ function StudentList({data,deleteData}) {
           <tr key={item.id}>
             <th scope="row">{item.id}</th>
             <td>{item.name}</td>
+            <td>{item.gender}</td>
             <td>
               <button
                 onClick={() => deleteData(item.id)}
@@ -40,7 +42,7 @@ function StudentList({data,deleteData}) {
     <main>
       <div className="summary">
         <p style={{ backgroundColor: "cyan", fontStyle: "italic" }}>
-          AllStuden : {data.length}
+          AllStudent : {data.length}
         </p>
         <button
           onClick={() => setShow(!show)}
