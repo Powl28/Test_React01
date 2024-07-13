@@ -1,0 +1,54 @@
+
+.button
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.button button
+{
+    background-color:aquamarine;
+    margin: 5px;
+}
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+ 
+}
+.progress-bar {
+    background-color: #4a148c; /* Purple color */
+    height: 20px;
+    width: 100%;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+}
+.title {
+    font-size: 1.5em;
+    margin: 16px 0;
+}
+.price {
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+
+.stock-status {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50; /* Green color */
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.product-row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
