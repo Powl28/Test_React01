@@ -1,24 +1,21 @@
 import React, { useEffect, useState ,useCallback} from "react";
 import "../components/ProductList.css";
+import { useFetch } from "../src/hooks/useFetch";
+import ClipLoader from "react-spinners/ClipLoader";
+
+
 
 export default function ProductList() {
-  const [products, setProducts] = useState([]);
-  const [Count, setCount] = useState(0);
   const [Url, setUrl] = useState();
-  
-  const fetchUrl = useCallback(() => {
-    fetch(Url)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data);
-        setCount(data.length);
-      });
-  },[Url]);
-    
+  const { data : Products,Loading } = useFetch(Url);
 
-  useEffect(() => {
-    fetchUrl()
-  }, [fetchUrl]);
+
+  
+if(Loading)
+    {
+      return <ClipLoader color="red"/>
+    }
+
 
 
   return (
@@ -26,13 +23,13 @@ export default function ProductList() {
     <div>
         <div className="button">
             
-            <h2>{Count}</h2>
+            <h2>{Products&&Products.length}</h2>
             <button onClick={()=>setUrl("http://localhost:3000/products/")}>Load All</button>
             <button onClick={()=>setUrl("http://localhost:3000/products?in_stock=true")}>Load In Stock</button>
 
         </div>
        
-        {products && products.map((product) => (
+        {Products && Products.map((product) => (
        
           <div className="product-list">
             <div className="card" key={product.id}>
