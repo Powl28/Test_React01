@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useCallback} from "react";
 import "../components/ProductList.css";
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
   const [Count, setCount] = useState(0);
   const [Url, setUrl] = useState();
-  const fetchUrl = () =>
+  
+  const fetchUrl = useCallback(() => {
     fetch(Url)
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
         setCount(data.length);
       });
+  },[Url]);
     
-  console.log(products);
 
   useEffect(() => {
     fetchUrl()
-  }, [fetchUrl()]);
+  }, [fetchUrl]);
 
 
   return (
