@@ -7,21 +7,16 @@ function App() {
 
 
   return (
-    <Routes>
-
-      <Route path='/' element={<Home/>}/>
-      <Route path='contact' element={<Contact/>}/>
-      <Route path='header' element={<Header/>}/>
-      <Route path='footer' element={<Footer/>}/>
-      <Route path='products' element={<ProductDetail/>}/>
-      <Route path='product/detail' element={<ProductList/>}/>
-
-     
-
-    
-
-
-    </Routes>
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="footer" element={<Footer />} />
+        <Route path="products" element={<ProductList />} />
+        <Route path="product/detail" element={<ProductDetail />} />
+      </Routes>
+    </div>
   );
 }
 
