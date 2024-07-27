@@ -34,10 +34,19 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: "REMOVE", payload: id });
   }
 
+  function addQuantity(id) {
+    dispatch({ type: "ADD", payload: id });
+  }
+
+  function subtractQuantity(id) {
+    dispatch({ type: "SUBTRACT", payload: id });
+  }
+
+
   
     //กระจายข้อมูลที่จะนำไปใช้งานหรือแชร์ด้วย Context Provider ผ่านคุณสมบัติ value
     return (
-      <CartContext.Provider value={{ ...state ,formatMoney,removeItem }}>
+      <CartContext.Provider value={{ ...state ,formatMoney,removeItem,addQuantity, subtractQuantity}}>
         {children} {/* คอมโพเนนต์ที่จะทำ value ไปใช้งาน */}
       </CartContext.Provider>
     );

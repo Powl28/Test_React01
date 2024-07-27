@@ -30,4 +30,40 @@ export const cartReducer = (state,action) => {
         }
     }
     
+    if (action.type === "ADD") {
+        let updateProduct = state.products.map((item) => {
+          if (item.id === action.payload) {
+            return {
+              ...item,
+              quantity: item.quantity + 1,
+            };
+          }
+          return item;
+        });
+        return {
+          ...state,
+          products: updateProduct,
+        };
+      }
+
+      if (action.type === "SUBTRACT") {
+        let updateProduct = state.products
+          .map((item) => {
+            if (item.id === action.payload) {
+              return {
+                ...item,
+                quantity: item.quantity - 1,
+              };
+            }
+            return item;
+          })
+          .filter((item) => item.quantity !== 0);
+        return {
+          ...state,
+          products: updateProduct,
+        };
+      }
+    
+    
+
 }

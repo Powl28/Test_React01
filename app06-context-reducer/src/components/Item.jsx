@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 export const Item = (props) => {
 
 const {id,name,price,image,quantity }= props;
-const {formatMoney,removeItem} = useCart()
+const {formatMoney,removeItem,addQuantity,subtractQuantity} = useCart()
 
 return (
       <div className="card">
@@ -15,9 +15,9 @@ return (
         </div>
 
         <div className="quantity">
-          <button>+</button>
-          <input type="text" value={quantity} disabled />
-          <button>-</button>
+        <button onClick={() => addQuantity(id)}>+</button>
+        <input type="text" value={quantity} disabled />
+        <button onClick={() => subtractQuantity(id)}>-</button>
         </div>
 
         <div className="total-price">{formatMoney(quantity * price)}</div>
