@@ -29,6 +29,18 @@ export const CartProvider = ({ children }) => {
     console.log("คำนวณหาผลรวม")
     dispatch({type:"CALCULATE_TOTAL"})
   },[state.products])
+
+  //===============================================================
+
+  
+  function addQuantity(id) {
+    dispatch({ type: "ADD", payload: id });
+  }
+
+
+  //===============================================================
+  
+
   
   function removeItem(id) {
     dispatch({ type: "REMOVE", payload: id });

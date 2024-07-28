@@ -8,7 +8,7 @@ export const Header = () => {
     <header>
       <p>Shopping Application</p>
       <p>สินค้าในตะกร้า : {amount}</p>
-          </header>
+    </header>
   );
 };
 

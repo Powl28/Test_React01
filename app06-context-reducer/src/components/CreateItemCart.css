@@ -1,0 +1,57 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box a {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    position: relative;
+    background: white;
+    padding: 1em 2em;
+    border-radius: 4px;
+}
+
+.modal:target {
+    display: flex;
+}
+
+form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+label{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+input{
+    font-size: 18px;
+    padding: 7px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+input:focus{
+    outline: none;
+}
